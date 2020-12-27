@@ -27,7 +27,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
 
     void initViews() {
         emailEd = findViewById(R.id.emailEd);
-        usernameEd = findViewById(R.id.emailEd);
+        usernameEd = findViewById(R.id.usernameEd);
         passwordEd = findViewById(R.id.passwordEd);
         passwordConfirmEd = findViewById(R.id.passwordConfirmEd);
     }
