@@ -3,34 +3,31 @@ package iug.project.onlineshoppingappproject.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+import iug.project.onlineshoppingappproject.Presenters.LoginActivityPresenter;
 import iug.project.onlineshoppingappproject.R;
 import iug.project.onlineshoppingappproject.RegisterActivityViewInterface;
 
-public class RegisterActivity extends AppCompatActivity implements RegisterActivityViewInterface {
-
+public class LoginActivity extends AppCompatActivity implements RegisterActivityViewInterface {
     EditText emailEd;
-    EditText usernameEd;
     EditText passwordEd;
-    EditText passwordConfirmEd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-
+        setContentView(R.layout.activity_login);
         initViews();
-
-
     }
 
     void initViews() {
         emailEd = findViewById(R.id.emailEd);
-        usernameEd = findViewById(R.id.emailEd);
         passwordEd = findViewById(R.id.passwordEd);
-        passwordConfirmEd = findViewById(R.id.passwordConfirmEd);
     }
+
 
     @Override
     public void startHomeActivity() {

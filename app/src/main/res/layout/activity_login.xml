@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
-    tools:context=".Activities.RegisterActivity">
+    tools:context=".Activities.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,16 +22,15 @@
         android:id="@+id/emailEd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:textColor="#000"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:textColor="#000"
         android:textColorHint="#CB000000"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         />
-
 
     <EditText
         android:id="@+id/passwordEd"
@@ -48,31 +46,16 @@
         app:layout_constraintTop_toBottomOf="@+id/emailEd"
         />
 
-    <EditText
-        android:id="@+id/passwordConfirmEd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:textColor="#000"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:textColorHint="#CB000000"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEd"
-        />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
-        android:text="Sign Up"
+        android:layout_marginEnd="20dp"
         android:background="#0085F9"
+        android:text="Sign In"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordConfirmEd" />
-
+        app:layout_constraintTop_toBottomOf="@+id/passwordEd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
