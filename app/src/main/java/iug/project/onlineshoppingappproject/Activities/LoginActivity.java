@@ -36,4 +36,9 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityVie
     public void printErrorMessage(String errorMessage) {
 
     }
+
+    @Override
+    public void printSuccessMessage(String successMessage) {
+
+    }
 }
