@@ -21,71 +21,70 @@ import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 @RunWith(MockitoJUnitRunner.class)
 public class RegisterActivityPresenterTest extends TestCase {
 
-  RegisterActivityPresenter registerActivityPresenter;
-  @Mock
-  RegisterActivityViewInterface registerActivityView;
+    RegisterActivityPresenter registerActivityPresenter;
 
-  @Mock
-  FirebaseAuth firebaseAuth;
+    @Mock
+    RegisterActivityViewInterface registerActivityView;
 
-  @Before
-  public void setUp() {
+    @Mock
+    FirebaseAuth firebaseAuth;
 
-    MockitoAnnotations.initMocks(this);
+    @Before
+    public void setUp() {
+
+        MockitoAnnotations.initMocks(this);
 
 
+        Context context = Mockito.mock(Context.class);
 
-    Context context = Mockito.mock(Context.class);
+        int apps = FirebaseApp.getApps(context).size();
 
-    int apps = FirebaseApp.getApps(context).size();
-
-    if (apps == 0) {
-      FirebaseOptions options = new FirebaseOptions.Builder()
-              .setApplicationId("1:433236011580:android:1e18ba90232c3919393139")
-              .setProjectId("onlineshoppingappproject")
-              .build();
-      FirebaseApp.initializeApp(context, options);
-    }
+        if (apps == 0) {
+            FirebaseOptions options = new FirebaseOptions.Builder()
+                    .setApplicationId("1:433236011580:android:1e18ba90232c3919393139")
+                    .setProjectId("onlineshoppingappproject")
+                    .build();
+            FirebaseApp.initializeApp(context, options);
+        }
 
 
 //  firebaseAuth = Mockito.mock(FirebaseAuth.class);
-    registerActivityPresenter = new RegisterActivityPresenter(registerActivityView);
+        registerActivityPresenter = new RegisterActivityPresenter(registerActivityView);
 
-  }
+    }
 
-  @Test
-  public void testPresenterStartHomeActivity(){
-    String email = "ahmed@gmail.com";
-    String username = "ahmed";
-    String password = "123456";
-    String confirmPassword = "123456";
+    @Test
+    public void testPresenterStartHomeActivity() {
+        String email = "ahmed@gmail.com";
+        String username = "ahmed";
+        String password = "123456";
+        String confirmPassword = "123456";
 
 
+        //Mockito.when(firebaseAuth.createUserWithEmailAndPassword(email,password))
+        //.thenReturn(true);
 
-    //Mockito.when(firebaseAuth.createUserWithEmailAndPassword(email,password))
-    //.thenReturn(true);
+        //when
+        registerActivityPresenter.registerUser(email, username, password, confirmPassword);
 
-    //when
-    registerActivityPresenter.registerUser(email,username,password,confirmPassword);
+        //then
+        Mockito.verify(registerActivityView).startHomeActivity();
 
-    //then
-    Mockito.verify(registerActivityView).startHomeActivity();
+    }
 
-  }
+    @Test
+    public void testPresenterDisplayErrorMessage() {
+        String email = "ahmed@gmail";
+        String username = "ahmed";
+        String password = "123456";
+        String confirmPassword = "123456";
 
-  @Test
-  public void testPresenterDisplayErrorMessage(){
-    String email = "ahmed@gmail";
-    String username = "ahmed";
-    String password = "123456";
-    String confirmPassword = "123456";
+        //when
+        registerActivityPresenter.registerUser(email, username, password, confirmPassword);
 
-    //when
-    registerActivityPresenter.registerUser(email,username,password,confirmPassword);
+        //then
+        Mockito.verify(registerActivityView).printErrorMessage("Registration Error");
 
-    //then
-    Mockito.verify(registerActivityView).printErrorMessage("Registration Error");
-
-  }
+    }
 
 }
