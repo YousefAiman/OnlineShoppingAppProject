@@ -1,11 +1,5 @@
 package iug.project.onlineshoppingappproject;
 
-import android.content.Context;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-
 import junit.framework.TestCase;
 
 import org.junit.Before;
@@ -13,7 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
@@ -21,70 +14,125 @@ import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 @RunWith(MockitoJUnitRunner.class)
 public class RegisterActivityPresenterTest extends TestCase {
 
-    RegisterActivityPresenter registerActivityPresenter;
+  RegisterActivityPresenter registerActivityPresenter;
+  @Mock
+  RegisterActivityViewInterface registerActivityView;
 
-    @Mock
-    RegisterActivityViewInterface registerActivityView;
+  @Before
+  public void setUp() {
+    registerActivityPresenter = new RegisterActivityPresenter(registerActivityView);
+  }
 
-    @Mock
-    FirebaseAuth firebaseAuth;
+  @Test
+  public void testPresenterSuccessTest(){
 
-    @Before
-    public void setUp() {
+    String email = "ahmed@gmail.com";
+    String username = "ahmed";
+    String password = "123456";
+    String confirmPassword = "123456";
 
-        MockitoAnnotations.initMocks(this);
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
 
+    //then
+    Mockito.verify(registerActivityView).printSuccessMessage("Registration Success");
 
-        Context context = Mockito.mock(Context.class);
+  }
 
-        int apps = FirebaseApp.getApps(context).size();
+  @Test
+  public void testPresenterEmailEmptyError(){
 
-        if (apps == 0) {
-            FirebaseOptions options = new FirebaseOptions.Builder()
-                    .setApplicationId("1:433236011580:android:1e18ba90232c3919393139")
-                    .setProjectId("onlineshoppingappproject")
-                    .build();
-            FirebaseApp.initializeApp(context, options);
-        }
+    String email = "";
+    String username = "ahmed";
+    String password = "123456";
+    String confirmPassword = "123456";
 
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
 
-//  firebaseAuth = Mockito.mock(FirebaseAuth.class);
-        registerActivityPresenter = new RegisterActivityPresenter(registerActivityView);
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Email field is empty");
 
-    }
+  }
 
-    @Test
-    public void testPresenterStartHomeActivity() {
-        String email = "ahmed@gmail.com";
-        String username = "ahmed";
-        String password = "123456";
-        String confirmPassword = "123456";
+  @Test
+  public void testPresenterUsernameEmptyError(){
 
+    String email = "ahmed@gmail.com";
+    String username = "";
+    String password = "123456";
+    String confirmPassword = "123456";
 
-        //Mockito.when(firebaseAuth.createUserWithEmailAndPassword(email,password))
-        //.thenReturn(true);
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
 
-        //when
-        registerActivityPresenter.registerUser(email, username, password, confirmPassword);
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Username field is empty");
 
-        //then
-        Mockito.verify(registerActivityView).startHomeActivity();
+  }
 
-    }
+  @Test
+  public void testPresenterPasswordEmptyError(){
 
-    @Test
-    public void testPresenterDisplayErrorMessage() {
-        String email = "ahmed@gmail";
-        String username = "ahmed";
-        String password = "123456";
-        String confirmPassword = "123456";
+    String email = "ahmed@gmail.com";
+    String username = "ahmed";
+    String password = "";
+    String confirmPassword = "123456";
 
-        //when
-        registerActivityPresenter.registerUser(email, username, password, confirmPassword);
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
 
-        //then
-        Mockito.verify(registerActivityView).printErrorMessage("Registration Error");
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Password field is empty");
 
-    }
+  }
+
+  @Test
+  public void testPresenterConfirmPasswordEmptyError(){
+
+    String email = "ahmed@gmail.com";
+    String username = "ahmed";
+    String password = "123456";
+    String confirmPassword = "";
+
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
+
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Confirm Password field is empty");
+
+  }
+
+  @Test
+  public void testPresenterPasswordLengthError(){
+
+    String email = "ahmed@gmail.com";
+    String username = "ahmed";
+    String password = "12345";
+    String confirmPassword = "123456";
+
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
+
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Password is less than six characters");
+
+  }
+
+  @Test
+  public void testPresenterPasswordConfirmationError(){
+
+    String email = "ahmed@gmail.com";
+    String username = "ahmed";
+    String password = "123456";
+    String confirmPassword = "123457";
+
+    //when
+    registerActivityPresenter.checkUserRegistrationInput(email,username,password,confirmPassword);
+
+    //then
+    Mockito.verify(registerActivityView).printErrorMessage("Password doesn't match");
+
+  }
 
 }
