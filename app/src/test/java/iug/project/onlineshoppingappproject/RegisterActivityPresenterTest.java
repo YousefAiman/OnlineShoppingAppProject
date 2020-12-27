@@ -21,6 +21,7 @@ public class RegisterActivityPresenterTest extends TestCase {
   @Before
   public void setUp() {
 
+
     registerActivityPresenter = new RegisterActivityPresenter(registerActivityView);
 
   }
