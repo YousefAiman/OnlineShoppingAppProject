@@ -9,8 +9,9 @@ public class LoginActivityPresenter implements iug.project.onlineshoppingappproj
         this.view = loginActivityViewInterface;
     }
 
+
     @Override
-    public void loginUser(String email, String password) {
+    public void checkLoginInfo(String email, String password) {
 
     }
 }
