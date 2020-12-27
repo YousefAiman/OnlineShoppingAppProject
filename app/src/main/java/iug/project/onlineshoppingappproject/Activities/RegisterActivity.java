@@ -22,7 +22,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
 
         initViews();
 
-
     }
 
     void initViews() {
@@ -41,4 +40,9 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
     public void printErrorMessage(String errorMessage) {
 
     }
+    @Override
+    public void printSuccessMessage(String errorMessage) {
+
+    }
+
 }

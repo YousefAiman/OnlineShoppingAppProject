@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import iug.project.onlineshoppingappproject.R;
+import iug.project.onlineshoppingappproject.Views.LoginActivityViewInterface;
 import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 
-public class LoginActivity extends AppCompatActivity implements RegisterActivityViewInterface {
+public class LoginActivity extends AppCompatActivity implements LoginActivityViewInterface {
     EditText emailEd;
     EditText passwordEd;
 

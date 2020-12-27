@@ -2,8 +2,9 @@ package iug.project.onlineshoppingappproject.Presenters;
 
 public interface RegisterActivityPresenter {
 
-    void registerUser(String email,
+    void checkUserRegistrationInput(String email,
                       String username,
                       String password,
                       String confirmPassword);
+
 }
