@@ -3,14 +3,10 @@ package iug.project.onlineshoppingappproject.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-import iug.project.onlineshoppingappproject.Presenters.LoginActivityPresenter;
 import iug.project.onlineshoppingappproject.R;
-import iug.project.onlineshoppingappproject.RegisterActivityViewInterface;
+import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 
 public class LoginActivity extends AppCompatActivity implements RegisterActivityViewInterface {
     EditText emailEd;

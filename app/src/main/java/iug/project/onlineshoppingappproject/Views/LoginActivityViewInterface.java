@@ -1,4 +1,4 @@
-package iug.project.onlineshoppingappproject;
+package iug.project.onlineshoppingappproject.Views;
 
 public interface LoginActivityViewInterface {
     void startHomeActivity();

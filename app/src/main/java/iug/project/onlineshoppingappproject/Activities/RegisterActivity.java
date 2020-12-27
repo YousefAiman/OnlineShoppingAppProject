@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import iug.project.onlineshoppingappproject.R;
-import iug.project.onlineshoppingappproject.RegisterActivityViewInterface;
+import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterActivityViewInterface {
 
