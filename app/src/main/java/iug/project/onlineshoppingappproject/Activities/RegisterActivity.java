@@ -121,6 +121,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
                         user.put("Username",usernameEd.getText().toString());
                         if(currentImageUrl!=null){
                             user.put("ImageUrl",currentImageUrl);
+                        }else{
+                            user.put("ImageUrl","");
                         }
 
 
