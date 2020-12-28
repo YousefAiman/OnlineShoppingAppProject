@@ -13,8 +13,9 @@ import java.util.ArrayList;
 
 import iug.project.onlineshoppingappproject.ProductsViewPager;
 import iug.project.onlineshoppingappproject.R;
+import iug.project.onlineshoppingappproject.Views.ProductActivityViewInterface;
 
-public class ProductActivity extends AppCompatActivity {
+public class ProductActivity extends AppCompatActivity implements ProductActivityViewInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,21 @@ public class ProductActivity extends AppCompatActivity {
                 }
             });
         }
+
+    }
+
+    @Override
+    public void productScreen() {
+
+    }
+
+    @Override
+    public void createImagesViewPager() {
+
+    }
+
+    @Override
+    public void printNoImagesError() {
 
     }
 }
