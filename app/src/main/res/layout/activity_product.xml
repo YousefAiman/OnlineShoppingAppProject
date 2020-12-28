@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".Activities.ProductActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/blue"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Product Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:lines="1"
+            android:textColor="#fff"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/productsViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1" />
+
+    <LinearLayout
+        android:id="@+id/productsSlider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/productsViewPager" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
