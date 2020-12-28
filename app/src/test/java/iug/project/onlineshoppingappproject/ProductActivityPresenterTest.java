@@ -1,6 +1,5 @@
 package iug.project.onlineshoppingappproject;
 
-import android.widget.ImageView;
 
 import junit.framework.TestCase;
 
@@ -8,7 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import iug.project.onlineshoppingappproject.Views.ProductActivityViewInterface;
 
@@ -25,8 +28,29 @@ public class ProductActivityPresenterTest extends TestCase {
     }
 
     @Test
-    public void testPresenterShowImage(){
-        ImageView i;
+    public void testPresenterShowImages(){
+        List<String> images = new ArrayList<>();
+        images.add("image1");
+        images.add("image2");
+        images.add("image3");
+
+        //when
+        productActivityPresenter.checkImages(images);
+
+        //then
+        Mockito.verify(productActivityViewInterface).createImagesViewPager();
+    }
+
+    @Test
+    public void testPresenterEmptyImages(){
+        List<String> images = new ArrayList<>();
+
+        //when
+        productActivityPresenter.checkImages(images);
+
+        //then
+        Mockito.verify(productActivityViewInterface).printNoImagesError();
+
     }
 
 }
