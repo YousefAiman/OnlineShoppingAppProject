@@ -2,6 +2,9 @@ package iug.project.onlineshoppingappproject;
 
 import android.content.SharedPreferences;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import junit.framework.TestCase;
 
 import org.junit.Before;
@@ -24,6 +27,8 @@ public class MainActivityPresenterTest extends TestCase {
 
   @Mock
   SharedPreferences sharedPreferences;
+
+
   @Before
   public void setUp() {
 
@@ -36,7 +41,7 @@ public class MainActivityPresenterTest extends TestCase {
   @Test
   public void testPresenterFirstTimeVisitor(){
 
-    Mockito.when(sharedPreferences.getBoolean("firstTime",false)).thenReturn(true);
+    Mockito.when(sharedPreferences.getBoolean("firstTime",true)).thenReturn(true);
 
     //when
     mainActivityPresenter.checkFirstTimeVisitor();
@@ -49,7 +54,7 @@ public class MainActivityPresenterTest extends TestCase {
   @Test
   public void testPresenterSecondTimeVisitor(){
 
-    Mockito.when(sharedPreferences.getBoolean("firstTime",false)).thenReturn(false);
+    Mockito.when(sharedPreferences.getBoolean("firstTime",true)).thenReturn(false);
 
     //when
     mainActivityPresenter.checkFirstTimeVisitor();
