@@ -189,6 +189,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
                         "Please wait until your profile pic is uploaded!",
                         Toast.LENGTH_SHORT).show();
             }else{
+
                 registerActivityPresenter.checkUserRegistrationInput(
                         emailEd.getText().toString(),
                         usernameEd.getText().toString(),

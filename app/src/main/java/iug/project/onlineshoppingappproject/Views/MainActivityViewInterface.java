@@ -4,6 +4,6 @@ public interface MainActivityViewInterface {
 
     void startWelcomeScreen();
 
-    void startHomeScreen();
+    void startLoginScreen();
 
 }

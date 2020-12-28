@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityViewI
   }
 
   @Override
-  public void startHomeScreen() {
+  public void startLoginScreen() {
 
   }
 }
