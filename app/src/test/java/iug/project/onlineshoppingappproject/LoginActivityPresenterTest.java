@@ -49,6 +49,18 @@ public class LoginActivityPresenterTest extends TestCase {
     }
 
     @Test
+    public void emptyEmail() {
+        String email = "";
+        String password = "123456";
+
+        //when
+        loginActivityPresenter.checkLoginInfo(email, password);
+
+        //then
+        Mockito.verify(loginActivityView).printErrorMessage("Email field is empty");
+    }
+
+/*    @Test
     public void wrongEmail() {
         String email = "ahmed@gmail";
         String password = "123456";
@@ -57,7 +69,19 @@ public class LoginActivityPresenterTest extends TestCase {
         loginActivityPresenter.checkLoginInfo(email, password);
 
         //then
-        Mockito.verify(loginActivityView).printErrorMessage("Invalid Email");
+        Mockito.verify(loginActivityView).printErrorMessage("Email field is empty");
+    }*/
+
+    @Test
+    public void emptyPassword() {
+        String email = "ahmed@gmail.com";
+        String password = "";
+
+        //when
+        loginActivityPresenter.checkLoginInfo(email, password);
+
+        //then
+        Mockito.verify(loginActivityView).printErrorMessage("Password field is empty");
 
     }
 
@@ -70,7 +94,8 @@ public class LoginActivityPresenterTest extends TestCase {
         loginActivityPresenter.checkLoginInfo(email, password);
 
         //then
-        Mockito.verify(loginActivityView).printErrorMessage("Invalid Password");
+        Mockito.verify(loginActivityView).printErrorMessage("Password is less than six characters");
     }
+
 
 }
