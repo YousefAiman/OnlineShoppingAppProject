@@ -56,7 +56,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
     String currentImageUrl;
     FirebaseStorage firebaseStorage;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
