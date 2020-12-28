@@ -50,5 +50,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     debugImplementation 'androidx.test.espresso:espresso-idling-resource:3.3.0'
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
 
 }

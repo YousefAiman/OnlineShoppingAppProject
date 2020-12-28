@@ -9,7 +9,11 @@ import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import java.util.ArrayList;
+import java.util.List;
 
 import iug.project.onlineshoppingappproject.MainActivityPresenter;
 import iug.project.onlineshoppingappproject.R;
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityViewI
 
         mainActivityPresenter.checkFirstTimeVisitor();
       }
+
+
 
     }
 

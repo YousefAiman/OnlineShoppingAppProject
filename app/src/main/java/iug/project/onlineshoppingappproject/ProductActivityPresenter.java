@@ -1,4 +1,16 @@
 package iug.project.onlineshoppingappproject;
 
-public class ProductActivityPresenter {
+import iug.project.onlineshoppingappproject.Views.ProductActivityViewInterface;
+
+public class ProductActivityPresenter implements iug.project.onlineshoppingappproject.Presenters.ProductActivityPresenter {
+    ProductActivityViewInterface view;
+
+    public ProductActivityPresenter(ProductActivityViewInterface productActivityViewInterface) {
+        this.view = productActivityViewInterface;
+    }
+
+    @Override
+    public void checkImages() {
+
+    }
 }
