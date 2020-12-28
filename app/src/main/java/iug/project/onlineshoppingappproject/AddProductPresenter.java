@@ -11,6 +11,7 @@ public class AddProductPresenter implements iug.project.onlineshoppingappproject
 
     @Override
     public void checkProductName(String productName) {
+
         if(productName.trim().isEmpty()){
             addProductView.printErrorMessage("Name field is empty");
         }

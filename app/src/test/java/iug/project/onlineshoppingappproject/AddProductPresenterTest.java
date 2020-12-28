@@ -18,10 +18,11 @@ import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 
 @RunWith(MockitoJUnitRunner.class)
 public class AddProductPresenterTest {
+
+
     AddProductPresenter addProductPresenter;
     @Mock
     AddProductViewInterface addProductView;
-
 
     @Before
     public void setUp() {
@@ -36,8 +37,7 @@ public class AddProductPresenterTest {
 
 
         //when
-        addProductPresenter.checkProductName(name);
-        addProductPresenter.checkProductDescription(description);
+        addProductPresenter.checkNameAndDiscriptionInput(name,description);
 
         //then
         Mockito.verify(addProductView).printSuccessMessage("Add Success");

@@ -70,14 +70,14 @@ public class ProductActivity extends AppCompatActivity {
             productsViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
                 @Override
-
                 public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 }
 
                 @Override
                 public void onPageSelected(int position) {
-//
+
+
 //                    Drawable unwrappedDrawable = AppCompatResources.getDrawable(ProductActivity.this
 //                            , R.drawable.indicator_icon);
 //                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);

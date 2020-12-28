@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="165dp"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     android:layout_margin="8dp"
     app:cardElevation="1dp"
-    android:layout_height="165dp">
+    android:layout_height="140dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
+            android:id="@+id/productIv"
+            android:layout_width="0dp"
+            app:layout_constraintDimensionRatio="1:1"
             android:layout_height="0dp"
             android:src="@drawable/cart_icon"
-            app:layout_constraintHeight_percent="0.6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/productNameTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:text="سيارة جديدة"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textColor="@color/blue"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintStart_toEndOf="@+id/cartIv"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/productPublishTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="3 hours ago"
             android:textColor="#3D3D3D"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/productNameTv"
+            app:layout_constraintTop_toBottomOf="@+id/productNameTv" />
 
 
         <ImageView
+            android:id="@+id/cartIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/cart_icon"
-
-            app:layout_constraintBottom_toBottomOf="@+id/textView3"
-            app:layout_constraintStart_toStartOf="@+id/textView5"
-            app:layout_constraintTop_toTopOf="@+id/textView3" />
+            app:layout_constraintBottom_toBottomOf="@+id/productNameTv"
+            app:layout_constraintStart_toStartOf="@+id/productPriceTv"
+            app:layout_constraintTop_toTopOf="@+id/productNameTv" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/productPriceTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="100000$"
             android:textColor="@color/blue"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView4" />
+            app:layout_constraintTop_toTopOf="@+id/productPublishTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

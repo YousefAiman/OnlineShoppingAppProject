@@ -3,6 +3,7 @@ package iug.project.onlineshoppingappproject.Models;
 import com.google.firebase.firestore.PropertyName;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class User implements Serializable {
 
@@ -11,9 +12,9 @@ public class User implements Serializable {
   @PropertyName("imageUrl")
   private String imageUrl;
   @PropertyName("cart")
-  private String[] cart;
+  private List<String> cart;
   @PropertyName("myPromos")
-  private String[] myPromos;
+  private List<String> myPromos;
 
 
   public String getUsername() {
@@ -32,19 +33,20 @@ public class User implements Serializable {
     this.imageUrl = imageUrl;
   }
 
-  public String[] getCart() {
+
+  public List<String> getCart() {
     return cart;
   }
 
-  public void setCart(String[] cart) {
+  public void setCart(List<String> cart) {
     this.cart = cart;
   }
 
-  public String[] getMyPromos() {
+  public List<String> getMyPromos() {
     return myPromos;
   }
 
-  public void setMyPromos(String[] myPromos) {
+  public void setMyPromos(List<String> myPromos) {
     this.myPromos = myPromos;
   }
 }

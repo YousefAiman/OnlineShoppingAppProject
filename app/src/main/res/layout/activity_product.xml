@@ -32,7 +32,7 @@
         android:id="@+id/productsViewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.35"
+        app:layout_constraintDimensionRatio="1.6"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1" />
 
     <LinearLayout
@@ -49,14 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
-        app:layout_constraintHeight_percent="0.3"
         android:orientation="horizontal"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        android:layout_marginBottom="2dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/productsSlider"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/productsViewPager"
         tools:itemCount="10"
-        tools:listitem="@layout/product_gird_item_design" />
+        tools:listitem="@layout/product_grid_item_design" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
