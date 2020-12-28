@@ -22,6 +22,17 @@ public class AddProductPresenter implements iug.project.onlineshoppingappproject
         if(productDescription.trim().isEmpty()){
             addProductView.printErrorMessage("discription field is empty");
         }
+
+
+    }
+
+    @Override
+    public void checkNameAndDiscriptionInput(String productName, String productDescription) {
+        if (!(productName.trim().isEmpty()) && !(productDescription.trim().isEmpty()) ){
+            addProductView.printSuccessMessage("Add Success");
+
+        }
+
     }
 
 
