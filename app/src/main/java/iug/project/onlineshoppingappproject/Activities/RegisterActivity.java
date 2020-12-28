@@ -73,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
         findViewById(R.id.registerBtn).setOnClickListener(this);
         findViewById(R.id.toSigninLayout).setOnClickListener(this);
         findViewById(R.id.imageIv).setOnClickListener(this);
+
     }
 
     void initViews() {

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineShoppingAppProject">
-        <activity android:name=".Activities.ProductActivity"></activity>
+        <activity android:name=".Activities.WelcomeActivity"></activity>
+        <activity android:name=".Activities.ProductActivity" />
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.RegisterActivity" />
