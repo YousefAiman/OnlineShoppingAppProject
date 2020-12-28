@@ -33,8 +33,11 @@ public class ProductActivityPresenterTest extends TestCase {
         images.add("image1");
         images.add("image2");
         images.add("image3");
+
+        //when
         productActivityPresenter.checkImages(images);
-//        productActivityViewInterface.createImagesViewPager();
+
+        //then
         Mockito.verify(productActivityViewInterface).createImagesViewPager();
     }
 
@@ -42,8 +45,10 @@ public class ProductActivityPresenterTest extends TestCase {
     public void testPresenterEmptyImages(){
         List<String> images = new ArrayList<>();
 
+        //when
         productActivityPresenter.checkImages(images);
-//        productActivityViewInterface.printNoImagesError();
+
+        //then
         Mockito.verify(productActivityViewInterface).printNoImagesError();
 
     }

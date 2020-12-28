@@ -8,29 +8,35 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import iug.project.onlineshoppingappproject.ProductActivityPresenter;
 import iug.project.onlineshoppingappproject.ProductsViewPager;
 import iug.project.onlineshoppingappproject.R;
 import iug.project.onlineshoppingappproject.Views.ProductActivityViewInterface;
 
 public class ProductActivity extends AppCompatActivity implements ProductActivityViewInterface {
+    ArrayList<String> promoImages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
-        createImagesPager();
+        promoImages = new ArrayList<>();
+        promoImages.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/profileImages%2F09e888a8-5a69-4d21-9f49-bf537a09ce87?alt=media&token=0e5c7b1c-3a26-450d-9a1f-09a9b6450cf7");
+        promoImages.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/profileImages%2F09e888a8-5a69-4d21-9f49-bf537a09ce87?alt=media&token=0e5c7b1c-3a26-450d-9a1f-09a9b6450cf7");
+
+
+        ProductActivityPresenter productActivityPresenter = new ProductActivityPresenter(this);
+        productActivityPresenter.checkImages(promoImages);
 
     }
 
-    void createImagesPager(){
+    void createImagesPager(ArrayList<String> promoImages){
 
-        ArrayList<String> promoImages = new ArrayList<>();
-        promoImages.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/profileImages%2F09e888a8-5a69-4d21-9f49-bf537a09ce87?alt=media&token=0e5c7b1c-3a26-450d-9a1f-09a9b6450cf7");
-        promoImages.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/profileImages%2F09e888a8-5a69-4d21-9f49-bf537a09ce87?alt=media&token=0e5c7b1c-3a26-450d-9a1f-09a9b6450cf7");
 
         ViewPager productsViewPager = findViewById(R.id.productsViewPager);
         LinearLayout productsSlider = findViewById(R.id.productsSlider);
@@ -102,11 +108,11 @@ public class ProductActivity extends AppCompatActivity implements ProductActivit
 
     @Override
     public void createImagesViewPager() {
-
+        createImagesPager(promoImages);
     }
 
     @Override
     public void printNoImagesError() {
-
+        Toast.makeText(this, "No Images", Toast.LENGTH_SHORT).show();
     }
 }
