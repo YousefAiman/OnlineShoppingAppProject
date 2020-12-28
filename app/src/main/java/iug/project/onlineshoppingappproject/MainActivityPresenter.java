@@ -17,7 +17,11 @@ public class MainActivityPresenter implements iug.project.onlineshoppingappproje
 
     @Override
     public void checkFirstTimeVisitor() {
-
+        if(sharedPreferences.getBoolean("firstTime",false)){
+            view.startWelcomeScreen();
+        }else{
+            view.startLoginScreen();
+        }
 
     }
 }
