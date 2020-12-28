@@ -9,7 +9,7 @@ public class RegisterActivityPresenter implements
 
     private RegisterActivityViewInterface view;
 
-    protected RegisterActivityPresenter(RegisterActivityViewInterface registerActivityViewInterface) {
+    public RegisterActivityPresenter(RegisterActivityViewInterface registerActivityViewInterface) {
         this.view = registerActivityViewInterface;
     }
 

@@ -17,11 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        new Handler().postDelayed(() ->
-                        startActivity(
-                                new Intent(MainActivity.this, RegisterActivity.class)),
-                100);
-
+        new Handler().postDelayed(() ->{
+                    startActivity(
+                            new Intent(MainActivity.this, RegisterActivity.class));
+                            finish();
+                }, 800);
     }
 }
