@@ -6,6 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".Activities.AddProductActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/blue"
+        app:contentInsetStart="0dp">
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Add Product"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:lines="1"
+            android:textColor="#fff"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:fadeScrollbars="true"
+        android:layout_marginTop="12dp"
+        android:scrollbars="none"
+        android:layoutDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar1">
+
+        <LinearLayout
+            android:id="@+id/scrollview"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/promoimage1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EBEBEB"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_add_black_24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar1"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/promoimage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EBEBEB"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_add_black_24dp" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar2"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/promoimage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#EBEBEB"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_add_black_24dp" />
+
+
+                <ProgressBar
+                    android:id="@+id/progress_bar3"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
     <TextView
         android:id="@+id/tv_product_name"
         android:layout_width="wrap_content"
@@ -15,7 +130,7 @@
         android:text="@string/Product_Name"
         android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll" />
 
     <EditText
         android:id="@+id/et_product_name"
@@ -67,15 +182,12 @@
     <EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
+        android:lines="3"
         android:gravity="start|top"
+        android:layout_marginTop="10dp"
         android:inputType="textMultiLine"
-        android:outlineAmbientShadowColor="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_product_description"
         app:layout_constraintTop_toBottomOf="@+id/tv_product_description" />
@@ -86,11 +198,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="100dp"
-        android:text="@string/publish"
         android:backgroundTint="@color/blue"
+        android:text="@string/publish"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

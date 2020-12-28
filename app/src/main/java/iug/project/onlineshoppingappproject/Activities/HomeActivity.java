@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
   CollectionReference promotionsRef;
   BottomNavigationView homeBottomNavigationView;
   FrameLayout homeFrameLayout;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -98,6 +100,13 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
     homeBottomNavigationView = findViewById(R.id.homeBottomNavigationView);
     homeFrameLayout = findViewById(R.id.homeFrameLayout);
 
+    findViewById(R.id.addProductButton).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        startActivity(new Intent(HomeActivity.this,AddProductActivity.class));
+      }
+    });
+
   }
 
   void getAllProducts(){
@@ -108,9 +117,7 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
       @Override
       public void onSuccess(QuerySnapshot snapshots) {
 
-        for(int i=0;i<10;i++){
-          products.addAll(snapshots.toObjects(Product.class));
-        }
+        products.addAll(snapshots.toObjects(Product.class));
 
       }
     }).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

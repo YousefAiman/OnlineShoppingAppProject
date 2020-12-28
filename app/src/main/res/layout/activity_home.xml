@@ -7,6 +7,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Activities.HomeActivity">
 
+
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar1"
         android:layout_width="match_parent"
@@ -73,6 +76,15 @@
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:elevation="3dp"/>
+
+
+    <android.widget.Button
+        android:id="@+id/addProductButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/add_product_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/homeSwipeRefreshLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->

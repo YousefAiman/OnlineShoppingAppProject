@@ -118,11 +118,11 @@ public class RegisterActivity extends AppCompatActivity implements RegisterActiv
 
 
                         Map<String,String> user = new HashMap<>();
-                        user.put("Username",usernameEd.getText().toString());
+                        user.put("username",usernameEd.getText().toString());
                         if(currentImageUrl!=null){
-                            user.put("ImageUrl",currentImageUrl);
+                            user.put("imageUrl",currentImageUrl);
                         }else{
-                            user.put("ImageUrl","");
+                            user.put("imageUrl","");
                         }
 
 

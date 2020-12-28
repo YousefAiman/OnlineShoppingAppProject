@@ -3,14 +3,17 @@ package iug.project.onlineshoppingappproject.Models;
 import com.google.firebase.firestore.PropertyName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product implements Serializable {
 
+  @PropertyName("productId")
+  private String productId;
   @PropertyName("name")
   private String name;
   @PropertyName("imageUrls")
-  private List<String> imageUrls;
+  private ArrayList<String> imageUrls;
   @PropertyName("price")
   private long price;
   @PropertyName("publishTime")
@@ -51,11 +54,19 @@ public class Product implements Serializable {
     this.description = description;
   }
 
-  public List<String> getImageUrls() {
+  public ArrayList<String> getImageUrls() {
     return imageUrls;
   }
 
-  public void setImageUrls(List<String> imageUrls) {
+  public void setImageUrls(ArrayList<String> imageUrls) {
     this.imageUrls = imageUrls;
+  }
+
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
   }
 }

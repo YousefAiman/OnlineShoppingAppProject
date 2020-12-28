@@ -17,7 +17,6 @@
             android:layout_width="0dp"
             app:layout_constraintDimensionRatio="1:1"
             android:layout_height="0dp"
-            android:src="@drawable/cart_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +48,7 @@
             android:id="@+id/cartIv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/cart_icon"
+            android:src="@drawable/close_icon"
             app:layout_constraintBottom_toBottomOf="@+id/productNameTv"
             app:layout_constraintStart_toStartOf="@+id/productPriceTv"
             app:layout_constraintTop_toTopOf="@+id/productNameTv" />

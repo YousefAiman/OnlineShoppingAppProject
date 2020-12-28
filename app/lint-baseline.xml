@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 4.1.1">
+
+    <issue
+        id="IidCompatibilityCheckFailure"
+        message="Check failed with exception: java.lang.NoSuchMethodException: com.android.tools.idea.lint.common.LintIdeProject$LintModuleProject.getGradleProjectModel()">
+        <location
+            file="OnlineShoppingAppProject"/>
+    </issue>
+
+    <issue
+        id="IidCompatibilityCheckFailure"
+        message="Check failed with exception: java.lang.NoSuchMethodException: com.android.tools.idea.lint.AndroidLintIdeProject$LintGradleProject.getGradleProjectModel()">
+        <location
+            file="app"/>
+    </issue>
+
+    <issue
+        id="InflateParams"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)">
+        <location
+            file="src\main\java\iug\project\onlineshoppingappproject\ProductsViewPager.java"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="AllowBackup"
+        message="On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute `android:fullBackupContent` to specify an `@xml` resource which configures which files to backup. More info: https://developer.android.com/training/backup/autosyncapi.html">
+        <location
+            file="src\main\AndroidManifest.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `#fff` with a theme that also paints a background (inferred theme is `@style/Theme.OnlineShoppingAppProject`)">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="7"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `#fff` with a theme that also paints a background (inferred theme is `@style/Theme.OnlineShoppingAppProject`)">
+        <location
+            file="src\main\res\layout\fragment_cart.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `#fff` with a theme that also paints a background (inferred theme is `@style/Theme.OnlineShoppingAppProject`)">
+        <location
+            file="src\main\res\layout\fragment_profile.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.gray_bg` appears to be unused">
+        <location
+            file="src\main\res\drawable\gray_bg.jpg"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused">
+        <location
+            file="src\main\res\drawable\ic_launcher_background.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.string.hello_blank_fragment` appears to be unused">
+        <location
+            file="src\main\res\values\strings.xml"
+            line="19"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/gray_bg.jpg` in densityless folder">
+        <location
+            file="src\main\res\drawable\gray_bg.jpg"/>
+    </issue>
+
+    <issue
+        id="IconLocation"
+        message="Found bitmap drawable `res/drawable/product_image.png` in densityless folder">
+        <location
+            file="src\main\res\drawable\product_image.png"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="135"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="159"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="182"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="21"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="35"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="50"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="65"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="80"/>
+    </issue>
+
+    <issue
+        id="Autofill"
+        message="Missing `autofillHints` attribute">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="94"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="102"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="9"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\activity_welcome.xml"
+            line="10"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\fragment_profile.xml"
+            line="79"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_grid_item_design.xml"
+            line="16"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_grid_item_design.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_pager_layout.xml"
+            line="2"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_row_cart_item_design.xml"
+            line="15"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_row_cart_item_design.xml"
+            line="47"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_row_item_design.xml"
+            line="15"/>
+    </issue>
+
+    <issue
+        id="ContentDescription"
+        message="Missing `contentDescription` attribute on image">
+        <location
+            file="src\main\res\layout\product_row_item_design.xml"
+            line="48"/>
+    </issue>
+
+    <issue
+        id="LabelFor"
+        message="Missing accessibility label: provide either a view with an `android:labelFor` that references this view or provide an `android:hint`">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="182"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src\main\java\iug\project\onlineshoppingappproject\Activities\ProductActivity.java"
+            line="43"/>
+    </issue>
+
+    <issue
+        id="SetTextI18n"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="src\main\java\iug\project\onlineshoppingappproject\ProductsAdapter.java"
+            line="98"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add Product&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="22"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Product Name&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="142"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Product Price&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_add_product.xml"
+            line="166"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Online Store&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_home.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="26"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="40"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sign In&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Don&apos;t have an account ? &quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="75"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sign Up&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_login.xml"
+            line="83"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Online Store&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_main.xml"
+            line="25"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Product Name&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_product.xml"
+            line="24"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Description&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_product.xml"
+            line="78"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Add to cart&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_product.xml"
+            line="132"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Email&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="55"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Username&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="70"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Password&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="85"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Confirm Password&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="99"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sign Up&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="116"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Already have an account ? &quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="135"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Sign In&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_register.xml"
+            line="142"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Welcome to Online Shopping&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_welcome.xml"
+            line="28"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Online shopping app always you to publish your own products&#xA;for other users to browse and allow you to browse other users products and add them to your cart.&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_welcome.xml"
+            line="42"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Register from here&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\activity_welcome.xml"
+            line="57"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Profile&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\menu\bottom_navigtaion_menu.xml"
+            line="8"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Home&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\menu\bottom_navigtaion_menu.xml"
+            line="13"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;Cart&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\menu\bottom_navigtaion_menu.xml"
+            line="18"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;My Products&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\fragment_profile.xml"
+            line="61"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;????? ?????&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\product_grid_item_design.xml"
+            line="29"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;3 hours ago&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\product_grid_item_design.xml"
+            line="41"/>
+    </issue>
+
+    <issue
+        id="HardcodedText"
+        message="Hardcoded string &quot;100000$&quot;, should use `@string` resource">
+        <location
+            file="src\main\res\layout\product_grid_item_design.xml"
+            line="62"/>
+    </issue>
+
+    <issue
+        id="RtlSymmetry"
+        message="When you define `paddingStart` you should probably also define `paddingEnd` for right-to-left symmetry">
+        <location
+            file="src\main\res\layout\activity_product.xml"
+            line="89"/>
+    </issue>
+
+    <issue
+        id="RtlHardcoded"
+        message="Consider replacing `android:drawableRight` with `android:drawableEnd=&quot;@drawable/cart_icon&quot;` to better support right-to-left layouts">
+        <location
+            file="src\main\res\layout\activity_product.xml"
+            line="131"/>
+    </issue>
+
+</issues>

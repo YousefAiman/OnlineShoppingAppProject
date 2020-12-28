@@ -7,7 +7,7 @@ import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 public class RegisterActivityPresenter implements
         iug.project.onlineshoppingappproject.Presenters.RegisterActivityPresenter {
 
-    private RegisterActivityViewInterface view;
+    private final RegisterActivityViewInterface view;
 
     public RegisterActivityPresenter(RegisterActivityViewInterface registerActivityViewInterface) {
         this.view = registerActivityViewInterface;

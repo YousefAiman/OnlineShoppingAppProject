@@ -18,6 +18,8 @@
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".Activities.RegisterActivity" />
+        <activity android:name=".Activities.AddProductActivity" />
+
         <activity android:name=".Activities.MainActivity">
 
             <intent-filter>

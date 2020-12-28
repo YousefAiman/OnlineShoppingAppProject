@@ -3,7 +3,7 @@ package iug.project.onlineshoppingappproject;
 import iug.project.onlineshoppingappproject.Views.LoginActivityViewInterface;
 
 public class LoginActivityPresenter implements iug.project.onlineshoppingappproject.Presenters.LoginActivityPresenter {
-    private LoginActivityViewInterface view;
+    private final LoginActivityViewInterface view;
 
     public LoginActivityPresenter(LoginActivityViewInterface loginActivityViewInterface) {
         this.view = loginActivityViewInterface;

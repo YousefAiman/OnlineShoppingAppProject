@@ -8,13 +8,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -79,6 +82,7 @@ public class ProfileFragment extends Fragment {
 
       }
     });
+
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
     FirebaseFirestore.getInstance().collection("Users")
@@ -87,18 +91,17 @@ public class ProfileFragment extends Fragment {
             .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
               @Override
               public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-
                  user = documentSnapshot.toObject(User.class);
-
-
               }
-            }).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            }).
+            addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
       @Override
       public void onComplete(@NonNull Task<DocumentSnapshot> task) {
 
-        if(user.getImageUrl()!=null){
+        if(user.getImageUrl() != null){
+
           Picasso.get().load(user.getImageUrl()).fit().centerCrop().into(circleImageView);
+
         }
 
         usernameTv.setText(user.getUsername());
@@ -114,11 +117,13 @@ public class ProfileFragment extends Fragment {
 
 
         FirebaseFirestore.getInstance().collection("Products")
-                .whereEqualTo("UserId",currentUser.getUid())
+                .whereEqualTo("userId",currentUser.getUid())
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                   @Override
                   public void onSuccess(QuerySnapshot snapshots) {
+
+                    Log.d("ttt","result size: "+snapshots.size());
 
                     products.addAll(snapshots.toObjects(Product.class));
 
@@ -131,6 +136,11 @@ public class ProfileFragment extends Fragment {
 
           }
         });
+      }
+    }).addOnFailureListener(new OnFailureListener() {
+      @Override
+      public void onFailure(@NonNull Exception e) {
+        Log.d("ttt","user error: "+e.getMessage());
       }
     });
 
