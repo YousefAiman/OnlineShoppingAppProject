@@ -75,11 +75,11 @@ public class ProductActivity extends AppCompatActivity {
 
                 @Override
                 public void onPageSelected(int position) {
-
-                    Drawable unwrappedDrawable = AppCompatResources.getDrawable(ProductActivity.this
-                            , R.drawable.indicator_icon);
-                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
-                    DrawableCompat.setTint(wrappedDrawable, Color.RED);
+//
+//                    Drawable unwrappedDrawable = AppCompatResources.getDrawable(ProductActivity.this
+//                            , R.drawable.indicator_icon);
+//                    Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
+//                    DrawableCompat.setTint(wrappedDrawable, Color.RED);
 
                     for (ImageView imageView : dots) {
 
