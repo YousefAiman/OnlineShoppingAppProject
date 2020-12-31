@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements LoginActivityVie
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, ProductActivity.class));
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         finish();
                     }
                 })

@@ -1,9 +1,5 @@
 package iug.project.onlineshoppingappproject;
 
-import android.content.Context;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 import junit.framework.TestCase;
@@ -13,11 +9,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import iug.project.onlineshoppingappproject.Views.LoginActivityViewInterface;
-import iug.project.onlineshoppingappproject.Views.RegisterActivityViewInterface;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LoginActivityPresenterTest extends TestCase {

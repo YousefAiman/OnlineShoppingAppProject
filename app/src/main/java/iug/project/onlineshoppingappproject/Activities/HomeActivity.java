@@ -50,13 +50,43 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     initViews();
 
+    Product product = new Product();
+    product.setName("asdas");
+    product.setDescription("sdfs");
+    product.setPrice(1000);
+    ArrayList<String> images = new ArrayList<>();
+    images.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/productImages%2Fdfb93586-84ea-496c-b34f-e972d8453413?alt=media&token=9694f715-04f2-4cb7-aa2f-c9d5e4dee5e6");
+
+    product.setImageUrls(images);
+    product.setPublishTime(
+            System.currentTimeMillis()/1000
+    );
+    product.setProductId("1");
+
     products = new ArrayList<>();
+    products.add(product);
+
+    Product product2 = new Product();
+    product2.setName("asdas");
+    product2.setDescription("sdfs");
+    product2.setPrice(1000);
+    ArrayList<String> images2 = new ArrayList<>();
+    images2.add("https://firebasestorage.googleapis.com/v0/b/onlineshoppingappproject.appspot.com/o/productImages%2Fdfb93586-84ea-496c-b34f-e972d8453413?alt=media&token=9694f715-04f2-4cb7-aa2f-c9d5e4dee5e6");
+
+    product2.setImageUrls(images2);
+    product2.setPublishTime(
+            (System.currentTimeMillis()/1000) - (60*60)
+    );
+    product.setProductId("2");
+
+    products.add(product2);
+
     productsAdapter =
             new ProductsAdapter(products,R.layout.product_grid_item_design);
 
     homeProductsRv.setAdapter(productsAdapter);
 
-    getAllProducts();
+//    getAllProducts();
 
     homeSwipeRefreshLayout.setOnRefreshListener(this);
 
@@ -100,12 +130,8 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
     homeBottomNavigationView = findViewById(R.id.homeBottomNavigationView);
     homeFrameLayout = findViewById(R.id.homeFrameLayout);
 
-    findViewById(R.id.addProductButton).setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        startActivity(new Intent(HomeActivity.this,AddProductActivity.class));
-      }
-    });
+    findViewById(R.id.addProductButton).setOnClickListener(view ->
+            startActivity(new Intent(HomeActivity.this,AddProductActivity.class)));
 
   }
 
@@ -113,27 +139,13 @@ public class HomeActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     homeSwipeRefreshLayout.setRefreshing(true);
 
-    promotionsRef.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-      @Override
-      public void onSuccess(QuerySnapshot snapshots) {
+    promotionsRef.get().addOnSuccessListener(snapshots ->
+            products.addAll(snapshots.toObjects(Product.class))).addOnCompleteListener(task -> {
 
-        products.addAll(snapshots.toObjects(Product.class));
+      homeSwipeRefreshLayout.setRefreshing(false);
+      productsAdapter.notifyDataSetChanged();
 
-      }
-    }).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-      @Override
-      public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
-        homeSwipeRefreshLayout.setRefreshing(false);
-        productsAdapter.notifyDataSetChanged();
-
-      }
-    }).addOnFailureListener(new OnFailureListener() {
-      @Override
-      public void onFailure(@NonNull Exception e) {
-        Log.d("ttt","failed to get products: "+e.getMessage());
-      }
-    });
+    }).addOnFailureListener(e -> Log.d("ttt","failed to get products: "+e.getMessage()));
 
   }
 
